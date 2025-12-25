@@ -1,30 +1,27 @@
-import { auth, db } from "./firebase.js";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
-} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+function register() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-window.register = async () => {
-  const email = emailInp.value;
-  const pass = passInp.value;
-  const phone = phoneInp.value;
-  const pin = pinInp.value;
+  if (password.length < 8) {
+    alert("Password minimum 8 characters");
+    return;
+  }
 
-  if(pass.length < 8) return alert("Password min 8");
+  auth.createUserWithEmailAndPassword(email, password)
+    .then(() => {
+      alert("Account created");
+      window.location.href = "dashboard.html";
+    })
+    .catch(err => alert(err.message));
+}
 
-  const u = await createUserWithEmailAndPassword(auth, email, pass);
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-  await setDoc(doc(db,"users",u.user.uid),{
-    email, phone, pin,
-    tickets: 10,
-    balance: 0
-  });
-
-  location.href="dashboard.html";
-};
-
-window.login = async () => {
-  await signInWithEmailAndPassword(auth,emailInp.value,passInp.value);
-  location.href="dashboard.html";
-};
+  auth.signInWithEmailAndPassword(email, password)
+    .then(() => {
+      window.location.href = "dashboard.html";
+    })
+    .catch(err => alert(err.message));
+}
