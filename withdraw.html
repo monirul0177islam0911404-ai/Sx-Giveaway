@@ -1,0 +1,17 @@
+<script type="module">
+import { auth,db } from "./js/firebase.js";
+import { addDoc,collection } from
+"https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+window.w=async()=>{
+ await addDoc(collection(db,"withdraws"),{
+  uid:auth.currentUser.uid,
+  amount:amt.value,
+  status:"Pending"
+ });
+ alert("Submitted");
+}
+</script>
+
+<input id="amt">
+<button onclick="w()">Withdraw</button>
