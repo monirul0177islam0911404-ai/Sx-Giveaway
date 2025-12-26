@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<h2>Dashboard</h2>
-<a href="withdraw.html">Withdraw</a>
-<a href="admin.html">Admin</a>
+<!-- Side Menu -->
+<div class="side-menu" id="menu">
+  <a href="dashboard.html">Dashboard</a>
+  <a href="#">Giveaway</a>
+  <a href="withdraw.html">Withdraw</a>
+  <a href="profile.html">Profile</a>
+</div>
 
+<!-- Top Bar -->
+<div class="topbar">
+  <span class="menu-btn" onclick="toggleMenu()">☰</span>
+  <h3>Sx Giveaway</h3>
+</div>
+
+<!-- Content -->
+<div class="card">
+  <h3>Wallet Balance</h3>
+  <p>৳ 120</p>
+</div>
+
+<div class="card">
+  <h3>Your Tickets</h3>
+  <p>45 Tickets</p>
+  <button class="btn">Join Giveaway</button>
+</div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav">
+  <a href="dashboard.html">Home</a>
+  <a href="#">Giveaway</a>
+  <a href="profile.html">Profile</a>
+</div>
+
+<!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
@@ -13,5 +48,12 @@
 <script src="js/firebase.js"></script>
 <script src="js/dashboard.js"></script>
 
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  menu.style.left = menu.style.left === "0px" ? "-250px" : "0px";
+}
+</script>
+
 </body>
-</html>
+  </html>
