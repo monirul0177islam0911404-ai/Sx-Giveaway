@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5f6fa;
+  color: #222;
+}
+
+/* Top bar */
+.topbar {
+  background: #2f3640;
+  color: #fff;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 22px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Button */
+.btn {
+  background: #0097e6;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Bottom nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  display: flex;
+  border-top: 1px solid #ddd;
+}
+
+.bottom-nav a {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Side menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #2f3640;
+  color: white;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.side-menu a {
+  display: block;
+  color: white;
+  margin: 15px 0;
+  text-decoration: none;
+}
